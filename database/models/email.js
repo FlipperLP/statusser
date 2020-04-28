@@ -17,8 +17,6 @@ module.exports = sequelize.define('email', {
     type: Sequelize.BOOLEAN,
     defaultValue: false,
   },
-  createdAt: Sequelize.DATE,
-  updatedAt: Sequelize.DATE,
 },
 {
   uniqueKeys: {

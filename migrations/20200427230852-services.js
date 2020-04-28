@@ -15,6 +15,10 @@ module.exports = {
       allowNull: false,
       unique: true,
     },
+    currentStatus: {
+      type: Sequelize.INTEGER(1),
+      defaultValue: 0,
+    },
     createdAt: Sequelize.DATE,
     updatedAt: Sequelize.DATE,
   }),

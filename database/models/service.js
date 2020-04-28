@@ -16,6 +16,8 @@ module.exports = sequelize.define('service', {
     allowNull: false,
     unique: true,
   },
-  createdAt: Sequelize.DATE,
-  updatedAt: Sequelize.DATE,
+  currentStatus: {
+    type: Sequelize.INTEGER(1),
+    defaultValue: 0,
+  },
 });

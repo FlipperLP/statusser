@@ -3,15 +3,29 @@ module.exports = {
     serviceID: {
       type: Sequelize.INTEGER(11),
       primaryKey: true,
-      autoIncrement: true,
+      references: {
+        model: 'services',
+        key: 'serviceID',
+      },
     },
     email: {
-      type: Sequelize.STRING(30),
+      type: Sequelize.STRING,
       allowNull: false,
-      unique: true,
     },
+    notified: {
+      type: Sequelize.BOOLEAN,
+      defaultValue: false,
+    },
+    recentError: Sequelize.STRING,
     createdAt: Sequelize.DATE,
     updatedAt: Sequelize.DATE,
+  },
+  {
+    uniqueKeys: {
+      uniqueEmail: {
+        fields: ['serviceID', 'email'],
+      },
+    },
   }),
 
   down: (queryInterface, Sequelize) => queryInterface.dropTable('emails'),

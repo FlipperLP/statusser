@@ -1,22 +1,23 @@
 module.exports = {
-  up: (queryInterface, Sequelize) => queryInterface.createTable('checkedservices', {
+  up: (queryInterface, Sequelize) => queryInterface.createTable('services', {
     serviceID: {
       type: Sequelize.INTEGER(11),
       primaryKey: true,
       autoIncrement: true,
     },
-    hubName: {
-      type: Sequelize.STRING(30),
+    serviceName: {
+      type: Sequelize.STRING,
       allowNull: false,
       unique: true,
     },
-    ownerID: {
-      type: Sequelize.STRING(30),
+    endpointCode: {
+      type: Sequelize.STRING(2),
       allowNull: false,
+      unique: true,
     },
     createdAt: Sequelize.DATE,
     updatedAt: Sequelize.DATE,
   }),
 
-  down: (queryInterface, Sequelize) => queryInterface.dropTable('checkedservices'),
+  down: (queryInterface, Sequelize) => queryInterface.dropTable('services'),
 };

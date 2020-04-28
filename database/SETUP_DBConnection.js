@@ -9,7 +9,7 @@ let database;
 let user;
 let password;
 let host;
-if (config.env.get('inDev')) {
+if (config.inDev) {
   const DBCredentials = require(testToken).development;
   database = DBCredentials.database;
   user = DBCredentials.username;
@@ -22,7 +22,7 @@ if (config.env.get('inDev')) {
   host = process.env.DBHost;
 }
 const sequelize = new Sequelize(
-  database, user, password, { host, dialect: 'mysql', logging: config.env.get('inDev') },
+  database, user, password, { host, dialect: 'mysql', logging: config.inDev },
 );
 console.log('[DB] Connected!');
 

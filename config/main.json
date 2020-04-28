@@ -1,0 +1,58 @@
+{
+    "setup": {
+        "moduleFolders": {
+            "functionsFolder": "functions",
+            "commandsFolder": "commands"
+        },
+        "startupFunctions": [
+            "STARTUP_initFunctions",
+            "STARTUP_envPrep"
+        ],
+        "setupFunctions": [
+            "SETUP_offlineStat",
+            "SETUP_status"
+        ]
+    },
+    "downdetector": {
+        "consentCookie": {
+            "domain": ".xn--allestrungen-9ib.de",
+            "expirationDate": 1622163590,
+            "hostOnly": false,
+            "httpOnly": false,
+            "name": "_evidon_consent_cookie",
+            "path": "/",
+            "sameSite": "lax",
+            "secure": false,
+            "session": false,
+            "storeId": "0",
+            "value": "{\"consent_date\":\"2020-04-28T00:59:50.479Z\",\"consent_type\":1}",
+            "id": 1
+        },
+        "endpoints": {
+            "de": "https://allestörungen.de/stoerung/",
+            "at": "https://allestörungen.at/stoerung/",
+            "ae": "https://downdetector.ae/status/",
+            "ca": "https://downdetector.ca/status/",
+            "nz": "https://downdetector.co.nz/status/",
+            "uk": "https://downdetector.co.uk/status/",
+            "za": "https://downdetector.co.za/status/",
+            "us": "https://downdetector.com/status/",
+            "au": "https://downdetector.com.au/status/",
+            "cz": "https://downdetector.cz/problem/",
+            "gr": "https://downdetector.gr/problema/",
+            "hk": "https://downdetector.hk/status/",
+            "hr": "https://downdetector.hr/status/",
+            "hu": "https://downdetector.hu/problema/",
+            "id": "https://downdetector.id/masalah/",
+            "ie": "https://downdetector.ie/status/",
+            "in": "https://downdetector.in",
+            "my": "https://downdetector.my/masalah/",
+            "ph": "https://downdetector.ph",
+            "pk": "https://downdetector.pk",
+            "ro": "https://downdetector.ro/nu-merge/",
+            "sg": "https://downdetector.sg",
+            "sk": "https://downdetector.sk/problemy/",
+            "dk": "https://downdetector.dk/problem-fejl/"
+        }
+    }
+}

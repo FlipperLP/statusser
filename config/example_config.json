@@ -1,0 +1,17 @@
+{
+    "smtp": {
+    "username": "email@gmail.com",
+    "password": "password",
+    "hostAdress": "smtp.gmail.com",
+    "TLSPort": "587",
+    "SSLPort": "465",
+    "TDLSSLRequired": true
+    },
+    "development": {
+        "username": "downdetector",
+        "password": "password",
+        "database": "downdetector",
+        "host": "localhost",
+        "dialect": "mysql"
+    }
+}

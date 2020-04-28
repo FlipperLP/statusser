@@ -11,7 +11,7 @@ module.exports = {
       unique: true,
     },
     endpointCode: {
-      type: Sequelize.STRING(30),
+      type: Sequelize.STRING(2),
       allowNull: false,
       unique: true,
     },

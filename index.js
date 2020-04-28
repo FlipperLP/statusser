@@ -1,29 +1,22 @@
-const puppeteer = require('puppeteer');
-
+// init config
 const config = require('./config/main.json');
 
+// create new collection in config
+config.functions = new Collection();
+config.env = new Collection();
+
 (async () => {
-  return console.log('This programm hasnt been finished coding yet and os not going to work');
-  const browser = await puppeteer.launch({ headless: false });
-  const page = await browser.newPage();
-  await page.setCookie(config.downdetector.consentCookie);
-  await page.goto('https://allesungen.de/stoerung/1-und-1/');
-  // await page.pdf({ path: './testing/withoutconsent.pdf', format: 'A4' });
+  // import Functions
+  config.setup.startupFunctions.forEach((FCN) => {
+    const INIT = require(`./functions/${FCN}.js`);
+    INIT.run(client, fs, config);
+  });
 
-  // logo
-  // const [output] = await page.$x('/html/body/div[3]/div[2]/div[1]/div[1]/div/a[1]/img[1]');
-  // downswitch
-  // const [output] = await page.$x('/html/body/div[3]/div[2]/div[1]/div[1]/div/a[1]/img[2]');
-  // text
-  // //*[@id="company"]/div[1]/div/div[1]
-  // /html/body/div[3]/div[2]/div[1]/div[1]/div/div[1]
-  // const [output] = await page.$x('//*[@id="company"]/div[1]/div/div[1]');
-  const [output] = await page.$x('//*[@id="company"]/div[1]/div/div[1]');
-  // const text = await output.getProperty('innerText');
-  const text = await output.getProperty('');
-  const down = await text.jsonValue();
-  console.log(down);
+  // create conenction to DB
+  require('./database/SETUP_DBConnection');
 
-  await page.close();
-  await browser.close();
+  config.setup.setupFunctions.forEach((FCN) => {
+    client.functions.get(FCN).run(client, config);
+  });
+  console.log(config.functions);
 })();

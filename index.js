@@ -3,6 +3,7 @@ const puppeteer = require('puppeteer');
 const config = require('./config/main.json');
 
 (async () => {
+  return console.log('This programm hasnt been finished coding yet and os not going to work');
   const browser = await puppeteer.launch({ headless: false });
   const page = await browser.newPage();
   await page.setCookie(config.downdetector.consentCookie);

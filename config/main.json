@@ -1,18 +1,4 @@
 {
-    "setup": {
-        "moduleFolders": {
-            "functionsFolder": "functions",
-            "commandsFolder": "commands"
-        },
-        "startupFunctions": [
-            "STARTUP_initFunctions",
-            "STARTUP_envPrep"
-        ],
-        "setupFunctions": [
-            "SETUP_offlineStat",
-            "SETUP_status"
-        ]
-    },
     "downdetector": {
         "endpoints": {
             "de": "https://allestörungen.de/stoerung/",

@@ -1,0 +1,33 @@
+{
+  "name": "downdetector-email-parser",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FlipperLP/downdetector-email-parser.git"
+  },
+  "keywords": [],
+  "author": "Phil",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FlipperLP/downdetector-email-parser/issues"
+  },
+  "homepage": "https://github.com/FlipperLP/downdetector-email-parser#readme",
+  "dependencies": {
+    "mysql2": "^2.1.0",
+    "nodemailer": "^6.4.6",
+    "puppeteer": "^3.0.1",
+    "request": "^2.88.2",
+    "request-promise": "^4.2.5",
+    "sequelize": "^5.21.7"
+  },
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.1.0",
+    "eslint-plugin-import": "^2.20.2"
+  }
+}

@@ -14,20 +14,6 @@
         ]
     },
     "downdetector": {
-        "consentCookie": {
-            "domain": ".xn--allestrungen-9ib.de",
-            "expirationDate": 1622163590,
-            "hostOnly": false,
-            "httpOnly": false,
-            "name": "_evidon_consent_cookie",
-            "path": "/",
-            "sameSite": "lax",
-            "secure": false,
-            "session": false,
-            "storeId": "0",
-            "value": "{\"consent_date\":\"2020-04-28T00:59:50.479Z\",\"consent_type\":1}",
-            "id": 1
-        },
         "endpoints": {
             "de": "https://allestörungen.de/stoerung/",
             "at": "https://allestörungen.at/stoerung/",
@@ -45,14 +31,28 @@
             "hu": "https://downdetector.hu/problema/",
             "id": "https://downdetector.id/masalah/",
             "ie": "https://downdetector.ie/status/",
-            "in": "https://downdetector.in",
+            "in": "https://downdetector.in/status/",
             "my": "https://downdetector.my/masalah/",
-            "ph": "https://downdetector.ph",
-            "pk": "https://downdetector.pk",
+            "ph": "https://downdetector.ph/status/",
+            "pk": "https://downdetector.pk/status/",
             "ro": "https://downdetector.ro/nu-merge/",
-            "sg": "https://downdetector.sg",
+            "sg": "https://downdetector.sg/status/",
             "sk": "https://downdetector.sk/problemy/",
             "dk": "https://downdetector.dk/problem-fejl/"
+        },
+        "consentCookie": {
+            "domain": ".xn--allestrungen-9ib.de",
+            "expirationDate": 1622163590,
+            "hostOnly": false,
+            "httpOnly": false,
+            "name": "_evidon_consent_cookie",
+            "path": "/",
+            "sameSite": "lax",
+            "secure": false,
+            "session": false,
+            "storeId": "0",
+            "value": "{\"consent_date\":\"2020-04-28T00:59:50.479Z\",\"consent_type\":1}",
+            "id": 1
         }
     }
 }

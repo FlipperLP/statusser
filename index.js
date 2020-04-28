@@ -1,22 +1,18 @@
+// init filesystem
+const fs = require('fs');
 // init config
 const config = require('./config/main.json');
 
-// create new collection in config
-config.functions = new Collection();
-config.env = new Collection();
-
 (async () => {
-  // import Functions
-  config.setup.startupFunctions.forEach((FCN) => {
-    const INIT = require(`./functions/${FCN}.js`);
-    INIT.run(client, fs, config);
-  });
+  await require('./functions/STARTUP_envPrep').run(fs, config);
+  const functions = await require('./functions/STARTUP_initFunctions').run();
 
   // create conenction to DB
   require('./database/SETUP_DBConnection');
 
-  config.setup.setupFunctions.forEach((FCN) => {
-    client.functions.get(FCN).run(client, config);
-  });
-  console.log(config.functions);
+  const serviceName = 'test';
+  const status = 'Down';
+  const email = 'philip.schaefer311@gmail.com';
+
+  const output = await functions.FUNC_sendEmail.run(serviceName, status, email, config);
 })();

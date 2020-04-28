@@ -105,3 +105,6 @@ dist
 
 # Custom ignores
 config/config.json
+/testing
+.eslintrc.json
+config/docker-compose.yml

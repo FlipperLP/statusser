@@ -1,5 +1,6 @@
 {
     "NOTE": "file is for debugging purposes only, use environment values for production usage instead",
+    "monitoringEmail": "email@gmail.com",
     "smtp": {
         "username": "email@gmail.com",
         "password": "password",

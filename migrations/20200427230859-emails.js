@@ -16,7 +16,6 @@ module.exports = {
       type: Sequelize.BOOLEAN,
       defaultValue: false,
     },
-    recentError: Sequelize.STRING,
     createdAt: Sequelize.DATE,
     updatedAt: Sequelize.DATE,
   },

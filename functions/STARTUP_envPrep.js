@@ -1,25 +1,30 @@
+/* eslint-disable no-param-reassign */
 const envFile = './config/config.json';
 
-module.exports.run = async (client, fs, config) => {
+module.exports.run = async (fs, config) => {
   // setting inDev var
   console.log(`[${module.exports.help.name}] Setting environment variables...`);
   if (fs.existsSync(envFile)) {
     const env = require(`.${envFile}`);
-    config.env.set('inDev', true);
-    config.env.set('smtpUsername', env.smtp.username);
-    config.env.set('smtpPassword', env.smtp.password);
-    config.env.set('smtpHostAdress', env.smtp.hostAdress);
-    config.env.set('smtpTLSPort', env.smtp.TLSPort);
-    config.env.set('smtpSSLPort', env.smtp.SSLPort);
-    config.env.set('smtpTDLSSLRequired', env.smtp.TDLSSLRequired);
+    config.inDev = true;
+    config.smtpUsername = env.smtp.username;
+    config.smtpPassword = env.smtp.password;
+    config.smtpHostAdress = env.smtp.hostAdress;
+    config.smtpSSLPort = env.smtp.port;
+    config.smtpTDLSSLRequired = env.smtp.SSLRequired;
+    config.interval = env.checkingInterval.interval;
+    config.intervalBetweenServices = env.checkingInterval.betweenServices;
+    config.monitoringEmail = env.monitoringEmail;
   } else {
-    config.env.set('inDev', false);
-    config.env.set('smtpUsername', process.env.smtpUsername);
-    config.env.set('smtpPassword', process.env.smtpPassword);
-    config.env.set('smtpHostAdress', process.env.smtpHostAdress);
-    config.env.set('smtpTLSPort', process.env.smtpTLSPort);
-    config.env.set('smtpSSLPort', process.env.smtpSSLPort);
-    config.env.set('smtpTDLSSLRequired', process.env.smtpTDLSSLRequired);
+    config.inDev = false;
+    config.smtpUsername = process.env.smtpUsername;
+    config.smtpPassword = process.env.smtpPassword;
+    config.smtpHostAdress = process.env.smtpHostAdress;
+    config.smtpPort = process.env.smtpPort;
+    config.smtpSSLRequired = process.env.smtpSSLRequired;
+    config.interval = process.env.interval;
+    config.intervalBetweenServices = process.env.intervalBetweenServices;
+    config.monitoringEmail = process.env.monitoringEmail;
   }
   console.log(`[${module.exports.help.name}] Environment variables set!`);
 };

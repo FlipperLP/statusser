@@ -1,11 +1,12 @@
 {
+    "NOTE": "file is for debugging purposes only, use environment values for production usage instead",
     "smtp": {
-    "username": "email@gmail.com",
-    "password": "password",
-    "hostAdress": "smtp.gmail.com",
-    "TLSPort": "587",
-    "SSLPort": "465",
-    "TDLSSLRequired": true
+        "username": "email@gmail.com",
+        "password": "password",
+        "hostAdress": "smtp.gmail.com",
+        "TLSPort": "587",
+        "SSLPort": "465",
+        "TDLSSLRequired": true
     },
     "development": {
         "username": "downdetector",

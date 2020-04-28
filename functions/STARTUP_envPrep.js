@@ -10,8 +10,8 @@ module.exports.run = async (fs, config) => {
     config.smtpUsername = env.smtp.username;
     config.smtpPassword = env.smtp.password;
     config.smtpHostAdress = env.smtp.hostAdress;
-    config.smtpSSLPort = env.smtp.port;
-    config.smtpTDLSSLRequired = env.smtp.SSLRequired;
+    config.smtpPort = env.smtp.port;
+    config.smtpSSLRequired = env.smtp.SSLRequired;
     config.interval = env.checkingInterval.interval;
     config.intervalBetweenServices = env.checkingInterval.betweenServices;
     config.monitoringEmail = env.monitoringEmail;

@@ -5,12 +5,12 @@ module.exports.run = async (serviceName, status, email, config) => {
 
   // create reusable transporter object using the default SMTP transport
   const transporter = nodemailer.createTransport({
-    host: config.hostAdress,
-    port: config.port,
-    secure: config.SSLRequired,
+    host: config.smtpHostAdress,
+    port: config.smtpPort,
+    secure: config.smtpSSLRequired,
     auth: {
-      user: config.username,
-      pass: config.password,
+      user: config.smtpUsername,
+      pass: config.smtpPassword,
     },
   });
 

@@ -20,7 +20,7 @@ function prepareCookie(endpoint) {
 
 // requests website with requered service
 async function getPage(endpoint, service) {
-  const browser = await puppeteer.launch({ headless: !config.inDev });
+  const browser = await puppeteer.launch({ headless: true });
   const page = await browser.newPage();
   await prepareCookie(endpoint);
   await page.setCookie(config.downdetector.consentCookie);

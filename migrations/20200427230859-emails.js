@@ -2,7 +2,6 @@ module.exports = {
   up: (queryInterface, Sequelize) => queryInterface.createTable('emails', {
     serviceID: {
       type: Sequelize.INTEGER,
-      primaryKey: true,
       references: {
         model: 'services',
         key: 'serviceID',

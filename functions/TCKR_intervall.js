@@ -1,4 +1,4 @@
-module.exports.run = async (config) => {
+module.exports.run = async (functions) => {
   // const serviceName = 'test';
   // const status = 'Down';
   // const email = 'philip.schaefer311@gmail.com';

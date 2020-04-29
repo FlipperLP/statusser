@@ -7,5 +7,5 @@
   // create conenction to DB and check DB stucture
   require('./database/SETUP_DBConnection');
 
-  await functions.TCKR_intervall.run(functions, 'vodafone');
+  await functions.TCKR_intervall.run(functions);
 })();

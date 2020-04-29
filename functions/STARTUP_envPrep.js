@@ -6,7 +6,7 @@ const config = require('../config/main.json');
 
 const envFile = './config/config.json';
 
-module.exports.run = async (fs, config) => {
+module.exports.run = async () => {
   // setting inDev var
   console.log(`[${module.exports.help.name}] Setting environment variables...`);
   if (fs.existsSync(envFile)) {
@@ -17,8 +17,7 @@ module.exports.run = async (fs, config) => {
     config.smtpHostAdress = env.smtp.hostAdress;
     config.smtpPort = env.smtp.port;
     config.smtpSSLRequired = env.smtp.SSLRequired;
-    config.interval = env.checkingInterval.interval;
-    config.intervalBetweenServices = env.checkingInterval.betweenServices;
+    config.interval = env.checkingInterval;
     config.monitoringEmail = env.monitoringEmail;
   } else {
     config.inDev = false;
@@ -27,8 +26,7 @@ module.exports.run = async (fs, config) => {
     config.smtpHostAdress = process.env.smtpHostAdress;
     config.smtpPort = process.env.smtpPort;
     config.smtpSSLRequired = process.env.smtpSSLRequired;
-    config.interval = process.env.interval;
-    config.intervalBetweenServices = process.env.intervalBetweenServices;
+    config.interval = process.env.checkingInterval;
     config.monitoringEmail = process.env.monitoringEmail;
   }
   console.log(`[${module.exports.help.name}] Environment variables set!`);

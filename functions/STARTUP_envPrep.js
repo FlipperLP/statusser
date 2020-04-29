@@ -1,4 +1,9 @@
 /* eslint-disable no-param-reassign */
+// init filesystem
+const fs = require('fs');
+// init config
+const config = require('../config/main.json');
+
 const envFile = './config/config.json';
 
 module.exports.run = async (fs, config) => {

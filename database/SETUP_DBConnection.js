@@ -5,7 +5,7 @@ const testToken = '../config/config.json';
 const config = require('../config/main.json');
 
 async function checkForMigrations(db) {
-  await console.log('[DB] Checking DB stucture');
+  await console.log('[DB] Checking DB stucture...');
   const fs = require('fs');
   const migrations = fs.readdirSync('./migrations');
   const [checkDBMigration] = await db.query('SHOW TABLES LIKE \'SequelizeMeta\'', { type: Sequelize.QueryTypes.SELECT });

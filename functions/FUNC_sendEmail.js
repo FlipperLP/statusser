@@ -3,8 +3,11 @@ const nodemailer = require('nodemailer');
 module.exports.run = async (serviceName, status, email, config) => {
   const testAccount = await nodemailer.createTestAccount();
 
+  let pool = false;
+  if (emails.length > 1) pool = true;
   // create reusable transporter object using the default SMTP transport
   const transporter = nodemailer.createTransport({
+    pool,
     host: config.smtpHostAdress,
     port: config.smtpPort,
     secure: config.smtpSSLRequired,

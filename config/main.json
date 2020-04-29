@@ -24,7 +24,9 @@
             "ro": "https://downdetector.ro/nu-merge/",
             "sg": "https://downdetector.sg/status/",
             "sk": "https://downdetector.sk/problemy/",
-            "dk": "https://downdetector.dk/problem-fejl/"
+            "dk": "https://downdetector.dk/problem-fejl/",
+            "br": "https://downdetector.com.br/fora-do-ar/",
+            "ar": "https://downdetector.com.ar/problemas/"
         },
         "consentCookie": {
             "domain": ".xn--allestrungen-9ib.de",

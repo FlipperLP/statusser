@@ -1,18 +1,18 @@
 {
     "NOTE": "file is for debugging purposes only, use environment values for production usage instead",
     "monitoringEmail": "email@gmail.com",
+    "checkingInterval": 10000,
     "smtp": {
         "username": "email@gmail.com",
         "password": "password",
         "hostAdress": "smtp.gmail.com",
-        "TLSPort": "587",
-        "SSLPort": "465",
-        "TDLSSLRequired": true
+        "port": "465",
+        "SSLRequired": true
     },
     "development": {
-        "username": "downdetector",
+        "username": "statusser",
         "password": "password",
-        "database": "downdetector",
+        "database": "statusser",
         "host": "localhost",
         "dialect": "mysql"
     }

@@ -15,8 +15,7 @@ services:
       smtpHostAdress: 
       smtpPort: 
       smtpSSLRequired: 
-      interval: 
-      intervalBetweenServices: 
+      checkingInterval:
 
   db:
     image: mariadb:latest

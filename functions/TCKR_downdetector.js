@@ -4,7 +4,7 @@ const Email = require('../database/models/email');
 
 const config = require('../config/main.json');
 
-function lop(functions) {
+function checker(functions) {
   return console.log(functions);
 }
 

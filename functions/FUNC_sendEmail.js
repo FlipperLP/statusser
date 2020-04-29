@@ -24,7 +24,7 @@ module.exports.run = async (html, text, subject, emails) => {
     const info = await transporter.sendMail({
       from, to, subject, text, html,
     });
-    console.log(`[${module.exports.help.name}] Message sent: ${info.messageId} (${to})`);
+    console.log(`[${module.exports.help.name}] Message '${subject}' sent: ${info.messageId} (${to})`);
   }
 };
 

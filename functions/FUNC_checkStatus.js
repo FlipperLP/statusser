@@ -27,8 +27,6 @@ module.exports.run = async (endpointCode, service) => {
   const endpointAdress = await getEndpoint(endpointCode);
   if (!endpointAdress) return 'noEndpoint';
   const [browser, page] = await getPage(endpointAdress, service);
-  // DISABLED: not in use
-  // await page.pdf({ path: './testing/withoutconsent.pdf', format: 'A4' });
 
   // check if page is a stauts page
   const problemButton = await page.evaluate(() => document.querySelector('a.btn.btn-danger.mt-2.px-4.py-3.shadow.mb-2'));
@@ -37,12 +35,8 @@ module.exports.run = async (endpointCode, service) => {
     return 'noServiceByName';
   }
 
-  // get status by color
-  // const statusDanger = await page.evaluate(() => document.querySelector('.color-danger'));
-  // const statusWarning = await page.evaluate(() => document.querySelector('.color-warning'));
-
-  // prepare return value
-  let finalStatus = 200;
+  // prepare return value and get status by color
+  let finalStatus = 'up';
   if (await page.evaluate(() => document.querySelector('.color-danger'))) finalStatus = 'down';
   if (await page.evaluate(() => document.querySelector('.color-warning'))) finalStatus = 'warn';
   await closePage(browser, page);

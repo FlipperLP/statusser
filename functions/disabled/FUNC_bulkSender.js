@@ -2,6 +2,22 @@ const Email = require('../../database/models/email');
 
 const config = require('../../config/main.json');
 
+
+async function getEmails(serviceID) {
+  const result = await Email.findAll({ where: { serviceID, notified: false } }).catch(errHander);
+  return result;
+}
+
+async function resetEmails(serviceID) {
+  const result = await Email.update({ notified: false }, { where: { serviceID, notified: true } }).catch(errHander);
+  return result;
+}
+
+async function triggerEmails(serviceID) {
+  const result = await Email.update({ notified: true }, { where: { serviceID, notified: false } }).catch(errHander);
+  return result;
+}
+
 module.exports.run = async () => {
   // const serviceName = 'vodafone';
   // const emails = ['philip.schaefer311@gmail.com', 'philip.schaefer0@gmail.com', 'schaefer@bitsteps.de'];

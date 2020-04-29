@@ -2,7 +2,7 @@ const Sequelize = require('sequelize');
 
 module.exports = sequelize.define('email', {
   serviceID: {
-    type: Sequelize.INTEGER(11),
+    type: Sequelize.INTEGER,
     primaryKey: true,
     references: {
       model: 'services',

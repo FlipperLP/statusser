@@ -1,26 +1,31 @@
 module.exports = {
   up: (queryInterface, Sequelize) => queryInterface.createTable('services', {
     serviceID: {
-      type: Sequelize.INTEGER(11),
+      type: Sequelize.INTEGER,
       primaryKey: true,
       autoIncrement: true,
     },
     serviceName: {
       type: Sequelize.STRING,
       allowNull: false,
-      unique: true,
     },
     endpointCode: {
       type: Sequelize.STRING(2),
       allowNull: false,
-      unique: true,
     },
     currentStatus: {
-      type: Sequelize.INTEGER(1),
+      type: Sequelize.TINYINT,
       defaultValue: 0,
     },
     createdAt: Sequelize.DATE,
     updatedAt: Sequelize.DATE,
+  },
+  {
+    uniqueKeys: {
+      uniqueService: {
+        fields: ['serviceName', 'endpointCode'],
+      },
+    },
   }),
 
   down: (queryInterface, Sequelize) => queryInterface.dropTable('services'),

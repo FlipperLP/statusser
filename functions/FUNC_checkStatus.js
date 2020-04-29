@@ -13,10 +13,16 @@ async function closePage(browser, page) {
   await browser.close();
 }
 
+function prepareCookie(endpoint) {
+  const [modEndpoint] = endpoint.slice(8).split('/');
+  config.downdetector.consentCookie.domain = modEndpoint;
+}
+
 // requests website with requered service
 async function getPage(endpoint, service) {
-  const browser = await puppeteer.launch({ headless: config.env.get('inDev') });
+  const browser = await puppeteer.launch({ headless: !config.inDev });
   const page = await browser.newPage();
+  await prepareCookie(endpoint);
   await page.setCookie(config.downdetector.consentCookie);
   await page.goto(`${endpoint}${service}/`);
   return [browser, page];

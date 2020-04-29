@@ -29,7 +29,6 @@
             "ar": "https://downdetector.com.ar/problemas/"
         },
         "consentCookie": {
-            "domain": ".xn--allestrungen-9ib.de",
             "expirationDate": 1622163590,
             "hostOnly": false,
             "httpOnly": false,

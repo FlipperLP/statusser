@@ -1,8 +1,8 @@
 const nodemailer = require('nodemailer');
 
-module.exports.run = async (serviceName, status, email, config) => {
-  const testAccount = await nodemailer.createTestAccount();
+const config = require('../config/main.json');
 
+module.exports.run = async (html, text, subject, emails) => {
   let pool = false;
   if (emails.length > 1) pool = true;
   // create reusable transporter object using the default SMTP transport
@@ -17,16 +17,15 @@ module.exports.run = async (serviceName, status, email, config) => {
     },
   });
 
-  // send mail with defined transport object
-  const info = await transporter.sendMail({
-    from: `'Fred Foo 👻' <${config.username}>`,
-    to: email,
-    subject: `${serviceName} is ${status}`,
-    text: `The Service ${serviceName} went into a ${status} state!`,
-    html: `<b>The Service ${serviceName} went into a ${status} state!</b>`,
-  });
-
-  console.log(`Message sent: ${info.messageId}`);
+  const from = `'Statusser' <${config.username}>`;
+  for (const to of emails) {
+    // send mail with defined transport object
+    // eslint-disable-next-line no-await-in-loop
+    const info = await transporter.sendMail({
+      from, to, subject, text, html,
+    });
+    console.log(`[${module.exports.help.name}] Message sent: ${info.messageId} (${to})`);
+  }
 };
 
 module.exports.help = {

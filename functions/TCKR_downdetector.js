@@ -50,11 +50,12 @@ async function checkServices(functions) {
       statusSwitch(status, service, functions);
     }, i * config.interval);
   });
-  console.log('---------------');
+  if (config.inDev) console.log(`[${module.exports.help.name}] --------------`);
 }
 
 module.exports.run = async (functions) => {
   const services = await getServices();
+  if (services) return console.log(`[${module.exports.help.name}] No services in DB, stopping...`);
   await checkServices(functions);
   setInterval(checkServices, services.length * config.interval, functions);
 };

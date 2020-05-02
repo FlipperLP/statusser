@@ -108,3 +108,4 @@ config/config.json
 /testing
 .eslintrc.json
 config/docker-compose.yml
+config/DB.txt
